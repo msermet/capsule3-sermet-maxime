@@ -53,28 +53,56 @@ export default function Contact() {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Page Contact</h1>
+    <div className="py-4">
+      <h1 className="h3 mb-4">Contact</h1>
 
-      <form 
-        onSubmit={handleSubmit} 
-        style={{ display: "flex", flexDirection: "column", gap: "1rem", maxWidth: "400px" }}
+      <form
+        onSubmit={handleSubmit}
+        className="row g-3" style={{ maxWidth: "420px" }}
       >
-        <label>
-          Nom :
-          <input value={nom} onChange={(e) => setNom(e.target.value)} />
-        </label>
+        <div className="col-12">
+          <label htmlFor="nom" className="form-label">
+            Nom
+          </label>
+          <input
+            id="nom"
+            className="form-control"
+            value={nom}
+            onChange={(e) => setNom(e.target.value)}
+          />
+        </div>
 
-        <label>
-          Email :
-          <input value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
+        <div className="col-12">
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            className="form-control"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
-        <label>
-          Message :
-          <textarea value={message} onChange={(e) => setMessage(e.target.value)} />
-        </label>
-        <button type="submit">Envoyer</button>
+        <div className="col-12">
+          <label htmlFor="message" className="form-label">
+            Message
+          </label>
+          <textarea
+            id="message"
+            rows={4}
+            className="form-control"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+        </div>
+
+        <div className="col-12">
+          <button type="submit" className="btn btn-primary w-100">
+            Envoyer
+          </button>
+        </div>
       </form>
     </div>
   );

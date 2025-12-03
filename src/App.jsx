@@ -3,9 +3,13 @@ import AppRouter from "./router";
 
 export default function App() {
   return (
-    <div>
+    <div className="bg-light min-vh-100">
       <Navbar />
-      <AppRouter />
+      <main className="py-4">
+        <div className="container">
+          <AppRouter />
+        </div>
+      </main>
     </div>
   );
 }
